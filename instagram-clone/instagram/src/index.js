@@ -3,8 +3,13 @@ import ReactDOM from 'react-dom';
 //import './index.css';
 import App from './App';
 //import reportWebVitals from './reportWebVitals';
+import FirebaseContext from './context/firebase';
+import { firebase, FieldValue} from './lib/firebase';
 
-ReactDOM.render( <App/>,
+ReactDOM.render( 
+  <FirebaseContext.Provider value={{ firebase, FieldValue}}>
+    <App/>
+  </FirebaseContext.Provider>,
   document.getElementById('root')
 );
 
@@ -18,13 +23,3 @@ ReactDOM.render( <App/>,
 // -> connect to firebase db
 // -> react-loading-skeleton
 // tailwind css
-
-// architecture 
-  //src 
-    //-> components, 
-    //-> constants, 
-    //-> context, 
-    //-> helpers,
-    //-> lib(firebase is going to live here), 
-    //-> services(firebase funcs),
-    // -> style (tailwind)
