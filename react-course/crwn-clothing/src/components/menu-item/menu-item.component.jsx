@@ -1,6 +1,6 @@
 import React from "react";
-import { withRouter } from "react-router"; 
-
+import { withRouter } from "react-router-dom"; 
+// import navigation here and use it for history push ..... version 6 of react-router
 import './menu-item.styles.scss';
 
 const MenuItem = ({title,imageUrl,size, history, linkUrl, match}) => (
